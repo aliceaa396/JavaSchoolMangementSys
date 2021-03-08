@@ -1,0 +1,67 @@
+package school.management.system;
+
+/**
+ *  This class is responsible for keeping track of the teachers name, id, and salary
+ */
+
+public class Teacher {
+    private int id;
+    private String name;
+    private int salary;
+    private int salaryEarned;
+
+    /**
+     *
+     * @param id id for the teacher.
+     * @param name name of the teacher.
+     * @param salary salary of the teacher.
+     */
+    public Teacher (int id, String name, int salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+        this.salaryEarned = 0;
+    }
+
+    /**
+     *
+     * @return the id of the teacher
+     */
+    public int getId () {
+        return id;
+    }
+
+    /**
+     *
+     * @return the name of the teacher
+     */
+
+    public String getName() {
+        return name;
+    }
+
+    /**
+     *
+     * @return the teacher salary
+     */
+    public int getSalary() {
+        return salary;
+    }
+
+    /**
+     * Sets the salary
+     * @param salary
+     */
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    /**
+     * Removes from the schools total money earned
+     * @param salary
+     */
+    public void recieveSalary (int salary) {
+        salaryEarned += salary;
+        School.updateMoneySpent(salary);
+    }
+}
